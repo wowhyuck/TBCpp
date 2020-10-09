@@ -41,10 +41,10 @@ int main()
 
 	std::sort(begin(vec), end(vec));
 
+	timer.elapsed();
 
-
-
-
+	for (auto& e : vec) cout << e << " ";
+	cout << endl;
 
 	return 0;
 }
