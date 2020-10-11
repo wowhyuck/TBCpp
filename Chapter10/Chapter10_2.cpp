@@ -13,7 +13,6 @@ int main()
 		// event
 		mon1.moveTo(Position2D(1, 1));
 		cout << mon1 << endl;
-
 	}
 
 	return 0;

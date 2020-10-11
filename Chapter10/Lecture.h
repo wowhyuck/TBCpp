@@ -27,6 +27,7 @@ public:
 		// do NOT delete students
 	}
 
+	// composition
 	//void assignTeacher(const Teacher& const teacher_input)
 	//{
 	//	teacher = teacher_input;
@@ -37,6 +38,7 @@ public:
 		teacher = teacher_input;
 	}
 
+	// composition
 	//void registerStudent(const Student& const student_input)
 	//{
 	//	students.push_back(student_input);
@@ -53,6 +55,7 @@ public:
 	{
 		std::cout << m_name << " Study " << std::endl << std::endl;
 
+		// composition
 		//for (auto& element : students)		// Note: 'auto element' doesn't work
 		//	element.setIntel(element.getIntel() + 1);
 
@@ -64,6 +67,7 @@ public:
 	{
 		out << "Lecture name : " << lecture.m_name << std::endl;
 
+		// composition
 		//out << lecture.teacher << std::endl;
 		//for (auto& element : lecture.students)
 		//	out << element << std::endl;
