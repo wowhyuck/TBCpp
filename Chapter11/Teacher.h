@@ -14,9 +14,6 @@ public:
 	void teach()
 	{
 		std::cout << getName() << " is teaching " << std::endl;
-
-
-
 	}
 
 	friend std::ostream& operator <<(std::ostream& out, const Teacher& teacher)
