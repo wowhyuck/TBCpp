@@ -11,6 +11,13 @@ public:
 	A(const T& input)
 		: m_value(input)
 	{}
+	
+	template<typename TT>
+	void doSomething()
+	{
+		cout << typeid(T).name() << " " << typeid(TT).name() << endl;
+		cout << (TT)m_value << endl;
+	}
 
 	void print()
 	{
@@ -49,6 +56,9 @@ int main()
 	double temp_d = 3.141592;
 	A<double*> a_double_ptr(&temp_d);
 	a_double_ptr.print();
+
+	/* 13.8 */
+	a_int.doSomething<double>();
 
 	return 0;
 }

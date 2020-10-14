@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Chapter12_11.cpp" />
+    <ClCompile Include="Chapter13_7.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{e4d45d69-5f1a-4582-93ed-7caf1bf03d9e}</ProjectGuid>
-    <RootNamespace>Chapter12</RootNamespace>
+    <ProjectGuid>{7529acba-f643-40ae-b0f6-a326632b88a7}</ProjectGuid>
+    <RootNamespace>Chapter13</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
