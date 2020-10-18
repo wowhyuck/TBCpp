@@ -6,16 +6,61 @@ class Resource
 {
 //private:
 public:
-	int m_data[100];
+	int* m_data = nullptr;
+	int m_length = 0;
 
 public:
 	Resource()
 	{
-		std::cout << "Resource constructed" << std::endl;
+		std::cout << "Resource defalut constructed" << std::endl;
+	}
+
+	Resource(int length)
+	{
+		std::cout << "Resource length constructed" << std::endl;
+
+		this->m_data = new int[length];
+		this->m_length = length;
+	}
+
+	Resource(const Resource& res)
+	{
+		std::cout << "Resource copy constructed" << std::endl;
+
+		Resource(res.m_length);
+
+		for (int i = 0; i < m_length; i++)
+			m_data[i] = res.m_data[i];
 	}
 
 	~Resource()
 	{
 		std::cout << "Resource destroyed" << std::endl;
+
+		if (m_data != nullptr) delete[] m_data;
+	}
+
+	Resource& operator = (Resource& res)
+	{
+		std::cout << "Resource copy assignment" << std::endl;
+
+		if (&res == this) return *this;
+
+		if (this->m_data != nullptr) delete[] m_data;
+
+		m_length = res.m_length;
+		m_data = new int[m_length];
+
+		for (int i = 0; i < m_length; i++)
+			m_data[i] = res.m_data[i];
+
+		return *this;
+	}
+
+	void print()
+	{
+		for (int i = 0; i < m_length; i++)
+			std::cout << m_data[i] << " ";
+		std::cout << std::endl;
 	}
 };
