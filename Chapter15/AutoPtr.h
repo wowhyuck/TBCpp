@@ -5,7 +5,8 @@
 template<class T>
 class AutoPtr
 {
-private:
+//private:
+public:
 	T* m_ptr;
 
 public:
@@ -21,30 +22,33 @@ public:
 		if (m_ptr != nullptr) delete m_ptr;
 	}
 
-	//AutoPtr(const AutoPtr& a)
-	//{
-	//	std::cout << "AutoPtr copy constructor" << std::endl;
+	AutoPtr(const AutoPtr& a)
+	{
+		std::cout << "AutoPtr copy constructor" << std::endl;
 
-	//	// deep copy
-	//	m_ptr = new T;
-	//	*m_ptr = *a.m_ptr;
-	//}
+		// deep copy
+		m_ptr = new T;
+		*m_ptr = *a.m_ptr;
+	}
 
-	//AutoPtr& operator = (const AutoPtr& a)
-	//{
-	//	std::cout << "AutoPtr copy assignment" << std::endl;
+	AutoPtr& operator = (const AutoPtr& a)
+	{
+		std::cout << "AutoPtr copy assignment" << std::endl;
 
-	//	if (&a == this)			// prevent self-assignment
-	//		return *this;
+		if (&a == this)			// prevent self-assignment
+			return *this;
 
-	//	if(m_ptr != nullptr) delete m_ptr;
+		if(m_ptr != nullptr) delete m_ptr;
 
-	//	// deep copy
-	//	m_ptr = new T;
-	//	*m_ptr = *a.m_ptr;
+		// deep copy
+		m_ptr = new T;
+		*m_ptr = *a.m_ptr;
 
-	//	return *this;
-	//}
+		return *this;
+	}
+
+	//AutoPtr(const AutoPtr& a) = delete;
+	//AutoPtr& operator = (const AutoPtr& a) = delete;
 
 	AutoPtr(AutoPtr&& a)
 		: m_ptr(a.m_ptr)
